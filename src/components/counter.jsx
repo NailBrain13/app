@@ -3,20 +3,8 @@ import React, { Component } from 'react';
 class Counter extends Component {
   state = {
     count: this.props.value,
-    tags: ['tag1', 'tag2', 'tag3'],
+    tags: ['tag-1', 'tag-2', 'tag-3'],
   };
-
-  renderTags() {
-    if (this.state.tags.length === 0) return <p>No tags</p>;
-
-    return (
-      <ul>
-        {this.state.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-    );
-  }
 
   render() {
     return (
@@ -49,6 +37,18 @@ class Counter extends Component {
   handleIncrement = () => {
     this.setState({ count: this.state.count + 1 });
   };
+
+  renderTags() {
+    if (this.state.tags.length === 0) return <p>No tags</p>;
+
+    return (
+      <ul>
+        {this.state.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    );
+  }
 }
 
 export default Counter;
