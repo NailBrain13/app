@@ -18,10 +18,6 @@ class Counter extends Component {
     );
   }
 
-  handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-
   render() {
     return (
       <React.Fragment>
@@ -48,6 +44,10 @@ class Counter extends Component {
     const { count } = this.state;
     return count === 0 ? 'Zero' : count;
   }
+
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
 }
 
 export default Counter;
