@@ -17,6 +17,12 @@ class Counter extends Component {
         >
           Add
         </button>
+        <button
+          onClick={this.props.onDelete}
+          className='btn btn-danger btn-sm m-2'
+        >
+          Delete
+        </button>
         {this.state.tags.length === 0 && <p>Create a new tag</p>}
         {this.renderTags()}
       </React.Fragment>
