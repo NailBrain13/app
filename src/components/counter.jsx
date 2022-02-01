@@ -6,16 +6,25 @@ class Counter extends Component {
     tags: ['tag1', 'tag2', 'tag3'],
   };
 
+  renderTags() {
+    if (this.state.tags.length === 0) return <p>No tags</p>;
+
+    return (
+      <ul>
+        {this.state.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <React.Fragment>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button className='btn btn-secondary btn-sm'>Add</button>
-        <ul>
-          {this.state.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        {this.state.tags.length === 0 && <p>Create a new tag</p>}
+        {this.renderTags()}
       </React.Fragment>
     );
   }
