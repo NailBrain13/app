@@ -12,19 +12,19 @@ class Counter extends Component {
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => this.props.onIncriment(this.props.counter)}
-          className='btn btn-secondary btn-sm m-3'
+          className='btn btn-secondary btn-sm m-3 bg-success'
         >
           Increment
         </button>
         <button
           onClick={() => this.props.onDicrement(this.props.counter)}
-          className='btn btn-secondary btn-sm'
+          className='btn btn-secondary btn-sm bg-danger'
         >
           Decrement
         </button>
         <button
           onClick={() => this.props.onDelete(this.props.counter.id)}
-          className='btn btn-danger btn-sm m-2'
+          className='btn btn-danger btn-sm m-2 bg-warning'
         >
           Remove Counter
         </button>
