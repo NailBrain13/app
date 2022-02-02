@@ -13,6 +13,15 @@ class App extends Component {
     ],
   };
 
+  constructor() {
+    super();
+    console.log('App-constructor');
+  }
+
+  componentDidMount() {
+    console.log('App-mounted');
+  }
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -45,6 +54,7 @@ class App extends Component {
   };
 
   render() {
+    console.log('App-render');
     return (
       //Use React.Fragment
       <>
